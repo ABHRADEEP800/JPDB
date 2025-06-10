@@ -120,8 +120,7 @@ This project is complete and ideal for academic submissions or small institution
 
 ## 📚 Sources
 
-- 🔗 [JsonPowerDB Official Documentation](https://login2explore.com/jpdb/docs.html)  
-- 🔗 [JPDB REST API Reference](https://login2explore.com/jpdb/api/index.html)  
+- 🔗 [JsonPowerDB Official Documentation](https://login2explore.com/jpdb/docs.html)
 - 🔗 [Form Validation - MDN Docs](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)  
 
 ---
