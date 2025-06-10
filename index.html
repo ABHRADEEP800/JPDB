@@ -19,196 +19,14 @@
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <!-- Custom CSS -->
-    <style>
-      :root {
-        --primary-color: #4361ee;
-        --secondary-color: #3f37c9;
-        --success-color: #4cc9f0;
-        --info-color: #4895ef;
-        --warning-color: #f72585;
-        --light-color: #f8f9fa;
-        --dark-color: #212529;
-      }
-
-      body {
-        background-color: #f0f2f5;
-        font-family: "Poppins", sans-serif;
-        color: #333;
-      }
-
-      .form-container {
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        padding: 2.5rem;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-        transition: all 0.3s ease;
-      }
-
-      .form-container:hover {
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-      }
-
-      .form-header {
-        color: var(--primary-color);
-        margin-bottom: 2rem;
-        text-align: center;
-      }
-
-      .form-header i {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        color: var(--primary-color);
-      }
-
-      .form-header h2 {
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-
-      .form-header .subtitle {
-        color: #6c757d;
-        font-weight: 400;
-      }
-
-      .form-label {
-        font-weight: 500;
-        color: #495057;
-        margin-bottom: 0.5rem;
-      }
-
-      .input-group-text {
-        background-color: #f1f3f5;
-        color: var(--primary-color);
-      }
-
-      .form-control,
-      .form-control:focus {
-        border-left: 0;
-        box-shadow: none;
-      }
-
-      .form-control:focus {
-        border-color: var(--primary-color);
-      }
-
-      .btn-action {
-        min-width: 120px;
-        margin: 0 10px;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        padding: 0.5rem 1.25rem;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-      }
-
-      .btn-save {
-        background-color: var(--success-color);
-        border-color: var(--success-color);
-      }
-
-      .btn-save:hover {
-        background-color: #3aa8d8;
-        border-color: #3aa8d8;
-      }
-
-      .btn-update {
-        background-color: var(--info-color);
-        border-color: var(--info-color);
-      }
-
-      .btn-update:hover {
-        background-color: #3a7bc8;
-        border-color: #3a7bc8;
-      }
-
-      .btn-reset {
-        background-color: var(--warning-color);
-        border-color: var(--warning-color);
-      }
-
-      .btn-reset:hover {
-        background-color: #d61e6f;
-        border-color: #d61e6f;
-      }
-
-      .status-message {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-        max-width: 350px;
-        display: none;
-      }
-
-      .how-to-use {
-        background-color: #f8f9fa;
-        border-radius: 10px;
-        padding: 1.5rem;
-        margin-top: 2rem;
-        border-left: 4px solid var(--primary-color);
-      }
-
-      .how-to-use h5 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-      }
-
-      .how-to-use ol {
-        padding-left: 1.5rem;
-      }
-
-      .how-to-use li {
-        margin-bottom: 0.5rem;
-      }
-
-      .footer {
-        text-align: center;
-        margin-top: 2rem;
-        color: #6c757d;
-        font-size: 0.9rem;
-      }
-
-      .footer a {
-        color: var(--primary-color);
-        text-decoration: none;
-      }
-
-      .footer a:hover {
-        text-decoration: underline;
-      }
-
-      /* Animation for status messages */
-      @keyframes slideIn {
-        from {
-          transform: translateX(100%);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadeOut {
-        from {
-          opacity: 1;
-        }
-        to {
-          opacity: 0;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- Status Message Container -->
+    <div class="container app-container">
       <div
         id="statusMessage"
         class="status-message alert alert-dismissible fade show"
@@ -224,134 +42,132 @@
       </div>
 
       <div class="row justify-content-center">
-        <div class="col-md-10 col-lg-8">
+        <div class="col-12">
           <div class="form-container">
             <div class="form-header">
               <i class="fas fa-user-graduate"></i>
               <h2>Student Enrollment System</h2>
-              <p class="subtitle">Powered by JSONPoweredDB</p>
+              <p class="subtitle">Efficient, Secure, and User-Friendly</p>
             </div>
 
             <form id="studentForm">
-              <!-- Roll No -->
-              <div class="mb-4">
-                <label for="rollno" class="form-label">
-                  <i class="fas fa-id-card me-2"></i>Roll Number
-                </label>
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="fas fa-hashtag"></i
-                  ></span>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="rollno"
-                    placeholder="Enter student roll number"
-                    onchange="getStudent()"
-                  />
+              <div class="row">
+                <!-- Row 1: Roll No & Full Name -->
+                <div class="col-lg-6 mb-4">
+                  <label for="rollno" class="form-label">
+                    <i class="fas fa-id-card"></i>Roll Number
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="fas fa-hashtag"></i
+                    ></span>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="rollno"
+                      placeholder="Enter roll number"
+                      onchange="getStudent()"
+                    />
+                  </div>
                 </div>
-                <div class="form-text">
-                  Enter the unique roll number to begin
+                <div class="col-lg-6 mb-4">
+                  <label for="studentName" class="form-label">
+                    <i class="fas fa-user"></i>Full Name
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="fas fa-signature"></i
+                    ></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="studentName"
+                      placeholder="Enter student full name"
+                      disabled
+                    />
+                  </div>
                 </div>
-              </div>
-
-              <!-- Full Name -->
-              <div class="mb-4">
-                <label for="studentName" class="form-label">
-                  <i class="fas fa-user me-2"></i>Full Name
-                </label>
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="fas fa-signature"></i
-                  ></span>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="studentName"
-                    placeholder="Enter student full name"
-                    disabled
-                  />
+                <!-- Row 2: DOB & Address -->
+                <div class="col-lg-6 mb-4">
+                  <label for="birthDate" class="form-label">
+                    <i class="fas fa-birthday-cake"></i>Date of Birth
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="far fa-calendar-alt"></i
+                    ></span>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="birthDate"
+                      disabled
+                    />
+                  </div>
                 </div>
-              </div>
-
-              <!-- Class -->
-              <div class="mb-4">
-                <label for="studentClass" class="form-label">
-                  <i class="fas fa-graduation-cap me-2"></i>Class
-                </label>
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="fas fa-layer-group"></i
-                  ></span>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="studentClass"
-                    placeholder="Enter class (1-12)"
-                    min="1"
-                    max="12"
-                    disabled
-                  />
+                <div class="col-lg-6 mb-4">
+                  <label for="address" class="form-label">
+                    <i class="fas fa-home"></i>Address
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="fas fa-map-marker-alt"></i
+                    ></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="address"
+                      placeholder="Enter student address"
+                      disabled
+                    />
+                  </div>
                 </div>
-              </div>
-
-              <!-- Birth Date -->
-              <div class="mb-4">
-                <label for="birthDate" class="form-label">
-                  <i class="fas fa-birthday-cake me-2"></i>Date of Birth
-                </label>
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="far fa-calendar-alt"></i
-                  ></span>
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="birthDate"
-                    disabled
-                  />
+                <!-- Row 3: Class -->
+                <div class="col-lg-6 mb-4">
+                  <label for="studentClass" class="form-label">
+                    <i class="fas fa-graduation-cap"></i>Class
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="fas fa-layer-group"></i
+                    ></span>
+                    <select class="form-control" id="studentClass" disabled>
+                      <option value="" disabled selected>Select class</option>
+                      <option value="1">Class 1</option>
+                      <option value="2">Class 2</option>
+                      <option value="3">Class 3</option>
+                      <option value="4">Class 4</option>
+                      <option value="5">Class 5</option>
+                      <option value="6">Class 6</option>
+                      <option value="7">Class 7</option>
+                      <option value="8">Class 8</option>
+                      <option value="9">Class 9</option>
+                      <option value="10">Class 10</option>
+                      <option value="11">Class 11</option>
+                      <option value="12">Class 12</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-
-              <!-- Address -->
-              <div class="mb-4">
-                <label for="address" class="form-label">
-                  <i class="fas fa-home me-2"></i>Address
-                </label>
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="fas fa-map-marker-alt"></i
-                  ></span>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="address"
-                    placeholder="Enter student address"
-                    disabled
-                  />
-                </div>
-              </div>
-
-              <!-- Enrollment Date -->
-              <div class="mb-4">
-                <label for="enrollmentDate" class="form-label">
-                  <i class="fas fa-calendar-check me-2"></i>Enrollment Date
-                </label>
-                <div class="input-group">
-                  <span class="input-group-text"
-                    ><i class="fas fa-calendar-day"></i
-                  ></span>
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="enrollmentDate"
-                    disabled
-                  />
+                <!-- Row 3: Enrollment Date -->
+                <div class="col-lg-6 mb-4">
+                  <label for="enrollmentDate" class="form-label">
+                    <i class="fas fa-calendar-check"></i>Enrollment Date
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text"
+                      ><i class="fas fa-calendar-day"></i
+                    ></span>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="enrollmentDate"
+                      disabled
+                    />
+                  </div>
                 </div>
               </div>
 
               <!-- Action Buttons -->
-              <div class="d-flex justify-content-center mt-5">
+              <div class="d-flex justify-content-center mt-5 action-buttons">
                 <button
                   type="button"
                   class="btn btn-save btn-action text-white"
@@ -384,41 +200,48 @@
               </div>
             </form>
 
-            <!-- How to Use Section -->
-            <div class="how-to-use mt-5">
+            <!-- How to Use Section, blue dot only, no numbers -->
+            <div class="how-to-use">
               <h5>
-                <i class="fas fa-question-circle me-2"></i>How to Use This
-                System
+                <i class="fas fa-question-circle"></i>How to Use This System
               </h5>
-              <ol>
+              <ul>
                 <li>
-                  Enter a student's <strong>Roll Number</strong> to search for
-                  existing records
+                  <span class="dot"></span>
+                  Enter a student's&nbsp;<strong>Roll Number</strong> &nbsp; to
+                  search for existing records and type the &nbsp;
+                  <strong>Name</strong>
                 </li>
                 <li>
+                  <span class="dot"></span>
                   If the student exists, their information will load and you can
-                  <strong>Update</strong> it
+                  &nbsp; <strong>Update</strong> &nbsp; it
                 </li>
                 <li>
+                  <span class="dot"></span>
                   If the student doesn't exist, all fields will unlock for
-                  <strong>new entry</strong>
+                  &nbsp;<strong>new entry</strong>&nbsp;
                 </li>
                 <li>
-                  Click <strong>Save</strong> to store new records or
-                  <strong>Update</strong> to modify existing ones
+                  <span class="dot"></span>
+                  Click &nbsp;<strong>Save</strong>&nbsp; to store new records
+                  or &nbsp; <strong>Update</strong>&nbsp; to modify existing
+                  ones
                 </li>
                 <li>
-                  Use <strong>Reset</strong> to clear the form and start over
+                  <span class="dot"></span>
+                  Use &nbsp;<strong>Reset</strong>&nbsp; to clear the form and
+                  start over
                 </li>
-              </ol>
+              </ul>
             </div>
 
             <!-- Footer -->
-            <div class="footer mt-4">
+            <div class="footer">
               <p>
-                Made with <span style="color: #e83e8c">❤️</span> by Abhradeep |
-                Powered by JSONPoweredDB
+                Made with <i class="fas fa-heart love-icon"></i> by Abhradeep
               </p>
+              <div class="powered-by">Powered by JSONPoweredDB</div>
             </div>
           </div>
         </div>
@@ -437,7 +260,7 @@
       src="http://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"
     ></script>
 
-    <!-- Custom JavaScript -->
-    <script src="index.js"></script>
+    <!-- Custom JS -->
+    <script type="text/javascript" src="assets/js/script.js"></script>
   </body>
 </html>
